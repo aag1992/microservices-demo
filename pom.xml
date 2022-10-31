@@ -23,7 +23,9 @@
 		<maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
         <twitter4j.verison>4.0.7</twitter4j.verison>
         <lombok.version>1.18.24</lombok.version>
+        <http-client.version>4.5.13</http-client.version>
         <configuration-processor.version>2.7.5</configuration-processor.version>
+        <json.version>20220924</json.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -31,6 +33,17 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${http-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>${json.version}</version>
             </dependency>
 
             <dependency>
