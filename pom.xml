@@ -4,6 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>twitter-to-kafka-service</module>
+        <module>app-config-data</module>
+        <module>docker-compose</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -59,12 +61,10 @@
                 <version>${twitter4j.verison}</version>
             </dependency>
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor -->
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>app-config-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
