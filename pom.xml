@@ -30,6 +30,7 @@
         <http-client.version>4.5.13</http-client.version>
         <avro.version>1.11.0</avro.version>
         <spring-kafka.version>2.9.2</spring-kafka.version>
+        <spring-boot-webflux.version>2.7.5</spring-boot-webflux.version>
         <configuration-processor.version>2.7.5</configuration-processor.version>
         <json.version>20220924</json.version>
     </properties>
@@ -44,6 +45,11 @@
                 <groupId>com.microservices.demo</groupId>
                 <artifactId>common-config</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-webflux</artifactId>
+                <version>${spring-boot-webflux.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.kafka</groupId>
