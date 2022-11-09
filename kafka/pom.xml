@@ -11,5 +11,12 @@
 
     <artifactId>kafka</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.microservices.demo</groupId>
+            <artifactId>common-config</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>
