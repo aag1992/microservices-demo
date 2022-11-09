@@ -24,6 +24,7 @@
         <java.version>11</java.version>
         <spring-retry.version>1.3.4</spring-retry.version>
         <spring-boot.version>2.7.5</spring-boot.version>
+        <kafka-avro-serializer.version>5.5.1</kafka-avro-serializer.version>
 		<maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
         <twitter4j.verison>4.0.7</twitter4j.verison>
         <lombok.version>1.18.24</lombok.version>
@@ -34,6 +35,14 @@
         <configuration-processor.version>2.7.5</configuration-processor.version>
         <json.version>20220924</json.version>
     </properties>
+
+
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -50,6 +59,34 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-webflux</artifactId>
                 <version>${spring-boot-webflux.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>kafka-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-avro-serializer</artifactId>
+                <version>${kafka-avro-serializer.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>io.swagger</groupId>
+                        <artifactId>swagger-annotations</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>io.swagger</groupId>
+                        <artifactId>swagger-core</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.springframework.kafka</groupId>
